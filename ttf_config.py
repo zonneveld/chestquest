@@ -1,7 +1,7 @@
 """Waveshare Pico LCD 2 inch display"""
 
 from machine import Pin, SPI
-import st7789
+import st7789 #type:ignore
 
 TFA = 0	 # top free area when scrolling
 BFA = 0	 # bottom free area when scrolling

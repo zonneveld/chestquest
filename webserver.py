@@ -5,9 +5,9 @@ import time
 import random
 from machine import Pin
 
-import st7789
-import tft_config
-import vga1_16x16 as font
+import st7789 #type:ignore
+import tft_config #type:ignore
+import vga1_16x16 as font #type:ignore
 
 tft = tft_config.config(0)
 
@@ -18,8 +18,8 @@ def center(text):
         text,
         tft.width() // 2 - length // 2 * font.WIDTH,
         tft.height() // 2 - font.HEIGHT,
-        st7789.WHITE,
-        st7789.RED)
+        st7789.GREEN,
+        st7789.WHITE)
 
 # Create an LED object on pin 'LED'
 led = Pin('LED', Pin.OUT)
@@ -88,7 +88,7 @@ while True:
             request = request.split()[1]
             request = request.split('?')[1]
             request = request.split('=')[1]
-            tft.fill(st7789.RED)
+            tft.fill(st7789.WHITE)
             center(request)
             
             print('Request:', request)
