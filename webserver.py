@@ -25,8 +25,8 @@ def center(text):
 led = Pin('LED', Pin.OUT)
 
 # Wi-Fi credentials
-ssid = 'ICT21x'
-password = 'RaspBerryPi'
+ssid = 'Workshop'
+password = 'NovaCollegeWorkshop'
 tft.init()
 tft.rotation(1)
 tft.fill(st7789.RED)
@@ -38,7 +38,7 @@ center("hallo kaas!")
 wlan = network.WLAN(network.STA_IF)
 
 wlan.active(True)
-# wlan.config(hostname="chestquest")  
+# wlan.ifconfig(('192.168.2.110', '255.255.254.0', '10.0.0.2', '8.8.8.8'))
 wlan.connect(ssid, password)
 
 # Wait for Wi-Fi connection
