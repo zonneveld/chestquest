@@ -54,9 +54,15 @@ class FrameData:
         self.color = color
 
 hint_animation = {
-    FrameData("rood",st7789.BLUE),
-    FrameData("groen",st7789.RED),
-    FrameData("blouw",st7789.GREEN)
+    FrameData("blauw",   st7789.RED),
+    FrameData("groen",  st7789.YELLOW),
+    FrameData("rood",  st7789.BLUE),
+    FrameData("blauw",  st7789.GREEN),
+
+    FrameData("geel",  st7789.BLUE),
+    FrameData("groen",  st7789.RED),
+    FrameData("blauw",  st7789.GREEN),
+    FrameData("rood",  st7789.YELLOW)
 }
 
 
@@ -87,6 +93,11 @@ def unlock():
     set()
     time.sleep(0.1)
     release()
+    for flashcount in range(2):
+        show_frame2("GOED!", st7789.GREEN,st7789.WHITE)
+        time.sleep(0.5)
+        show_frame2("GOED!", st7789.WHITE,st7789.GREEN)
+        time.sleep(0.5)
 
     # t = Timer(mode=Timer.ONE_SHOT, period=100, callback=release)
     # t.init()
@@ -153,9 +164,7 @@ while True:
             action = request.split()[1]
             
             if action == "/unlock":
-                set()
-                time.sleep(0.1)
-                release()
+                unlock()
 
             if action == "/hint":
                 hint()
@@ -163,11 +172,6 @@ while True:
             if action == "/wrong":
                 wrong()
 
-
-            # tft.fill(st7789.WHITE)
-            # center(request)
-            
-            # print('Request:', request)
         except IndexError:
             pass
         

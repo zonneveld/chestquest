@@ -1,11 +1,148 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>nou, je hebt het voor elkaar!</title>
+        <title>ChestQuest</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            body {
+              background-image: url('https://img.freepik.com/free-vector/question-mark-pattern_1319-109.jpg?');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: cover;
+            }
+            </style> 
+
+        <script>
+            function check_anwser()
+            {
+                awnser = [
+                    document.querySelector('input[name="row_1"]:checked').value == "red",
+                    document.querySelector('input[name="row_2"]:checked').value == "yellow",
+                    document.querySelector('input[name="row_3"]:checked').value == "blue",
+                    document.querySelector('input[name="row_4"]:checked').value == "green",
+
+                    document.querySelector('input[name="row_5"]:checked').value == "blue",
+                    document.querySelector('input[name="row_6"]:checked').value == "red",
+                    document.querySelector('input[name="row_7"]:checked').value == "green",
+                    document.querySelector('input[name="row_8"]:checked').value == "yellow"
+                
+                ];
+                if (awnser.includes(false))
+                {
+                    console.log("WRONG");
+                    location.href='/wrong';
+                }
+                else
+                {
+                    console.log("OK!");
+                    location.href='/unlock';
+                }
+                console.log(awnser);
+            }
+        </script>
     </head>
     <body>
-        <button onclick="location.href='/wrong'">wrong</button>
-        <button onclick="location.href='/hint'">hint</button>
-        <button onclick="location.href='/unlock'">unlock</button>
+        <div class="row m-4">
+            <div class ="col-sm-2"></div>
+            <div class =" container col-sm-8 bg-success p-3 rounded">
+                <h1>ChestQuest</h1>
+                Als je dit kan lezen, betekend dat je de software goed hebt geinstalleerd! <br> goed gedaan! 
+
+                <ul>
+                    <li>Probeer de code te kraken om bij je prijs te komen </li>
+                    <li>Door op "geef mij een hint" te drukken krijg je  (hoe raad je het) een hint (kijk naar je doosje)</li>
+                    <li>Extra hint: Kijken.... niet Lezen!!</li>
+                </ul> 
+            </div>
+            <div class ="col-sm-2"></div>
+        </div>
+
+        <div class="row m-4">
+            <div class ="col-sm-2"></div>
+            <div class ="container col-sm-8 bg-success p-3 rounded" >
+                <table class="table table-bordered rounded">
+                    <thead>
+                        <th scope="col"> </th>
+                        <th scope="col">rood</th>
+                        <th scope="col">groen</th>
+                        <th scope="col">blauw</th>
+                        <th scope="col">geel</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                            <td><input type="radio" name="row_1" value="red" checked></td>
+                            <td><input type="radio" name="row_1" value="green"></td>
+                            <td><input type="radio" name="row_1" value="blue"></td>
+                            <td><input type="radio" name="row_1" value="yellow"></td>
+                        </tr>
+        
+                        <th scope="row">2</th>
+                            <td><input type="radio" name="row_2" value="red" checked></td>
+                            <td><input type="radio" name="row_2" value="green"></td>
+                            <td><input type="radio" name="row_2" value="blue"></td>
+                            <td><input type="radio" name="row_2" value="yellow"></td>
+                        </tr>
+        
+                        <th scope="row">3</th>
+                            <td><input type="radio" name="row_3" value="red"checked></td>
+                            <td><input type="radio" name="row_3" value="green"></td>
+                            <td><input type="radio" name="row_3" value="blue"></td>
+                            <td><input type="radio" name="row_3" value="yellow"></td>
+                        </tr>
+                        
+                        <th scope="row">4</th>
+                            <td><input type="radio" name="row_4" value="red"checked></td>
+                            <td><input type="radio" name="row_4" value="green"></td>
+                            <td><input type="radio" name="row_4" value="blue"></td>
+                            <td><input type="radio" name="row_4" value="yellow"></td>
+                        </tr>
+                        
+                        <th scope="row">5</th>
+                            <td><input type="radio" name="row_5" value="red"checked></td>
+                            <td><input type="radio" name="row_5" value="green"></td>
+                            <td><input type="radio" name="row_5" value="blue"></td>
+                            <td><input type="radio" name="row_5" value="yellow"></td>
+                        </tr>
+                        
+                        <th scope="row">6</th>
+                            <td><input type="radio" name="row_6" value="red" checked></td>
+                            <td><input type="radio" name="row_6" value="green"></td>
+                            <td><input type="radio" name="row_6" value="blue"></td>
+                            <td><input type="radio" name="row_6" value="yellow"></td>
+                        </tr>
+                        
+                        <th scope="row">7</th>
+                            <td><input type="radio" name="row_7" value="red" checked></td>
+                            <td><input type="radio" name="row_7" value="green"></td>
+                            <td><input type="radio" name="row_7" value="blue"></td>
+                            <td><input type="radio" name="row_7" value="yellow"></td>
+                        </tr>
+        
+                        <th scope="row">8</th>
+                            <td><input type="radio" name="row_8" value="red" checked></td>
+                            <td><input type="radio" name="row_8" value="green"></td>
+                            <td><input type="radio" name="row_8" value="blue"></td>
+                            <td><input type="radio" name="row_8" value="yellow"></td>
+                        </tr>
+        
+                        </tbody>
+                </table>        
+
+            </div>
+            <div class ="col-sm-2"></div>
+        </div>
+        <div class="row m-4 ">
+            <div class ="col-sm-2"></div>
+            <div class ="col-sm-8 bg-success p-3 rounded">
+                <button onclick="check_anwser()">open!</button>
+                <button onclick="location.href='/hint'">geef me een hint!</button>
+            </div>
+            <div class ="col-sm-2"></div>
+        </div>
+
     </body>
 </html>
