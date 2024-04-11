@@ -144,9 +144,7 @@ tft.rotation(1)
 tft.fill(st7789.BLACK)
 center(""+str(network_info[0]))
 
-file = open("index.html", "r")
-content = file.read()
-file.close()
+
 
 
 while True:
@@ -177,7 +175,17 @@ while True:
         
         # Send the HTTP response and close the connection
         conn.send('HTTP/1.0 200 OK\r\nContent-type: text/html\r\n\r\n')
-        conn.send(content)
+        file = open("index.html", "r")
+        
+        content = file.readlines()
+        file.close()
+
+        for line in content:
+            conn.send(line)
+        
+        # print(len(content))
+        
+        # conn.send(content)
         conn.close()
 
     except OSError as e:
